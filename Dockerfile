@@ -1,4 +1,4 @@
-FROM nginx:1.15-alpine
+FROM nginx:1.19.5-alpine
 
 # For using curl within nginx deployment
 RUN apk add --update \
