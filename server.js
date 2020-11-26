@@ -2,6 +2,7 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
+const proxy = require('express-http-proxy');
     
 Object.assign=require('object-assign')
 
@@ -13,7 +14,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
-
+app.use('/api', proxy('http://rest-goals-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com/api'));
 app.use(express.static('dist/ui'));
 
 // error handling
