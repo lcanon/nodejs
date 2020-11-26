@@ -14,7 +14,10 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
-app.use('/api', proxy('http://rest-goals-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com/api'));
+app.use('/apiUsers', proxy('http://rest-users-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
+app.use('/apiGoals', proxy('http://rest-goals-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
+app.use('/apiAdvices', proxy('http://rest-advices-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
+
 app.use(express.static('dist/ui'));
 
 // error handling
