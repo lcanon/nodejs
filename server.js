@@ -3,6 +3,7 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 const proxy = require('express-http-proxy');
+const angularFolder = 'dist/ui';
     
 Object.assign=require('object-assign')
 
@@ -16,9 +17,15 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 
 app.use('/apiUsers', proxy('http://rest-users-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
 app.use('/apiGoals', proxy('http://rest-goals-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
-app.use('/apiAdvices', proxy('http://rest-advices-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
+app.use('/apiAdvices', proxy('http://rest-advice-frontdev2ops.apps.cluster-7ff0.7ff0.example.opentlc.com'));
 
-app.use(express.static('dist/ui'));
+
+app.get('*.*', express.static(angularFolder, {maxAge: '1y'}));
+
+//app.use(express.static('dist/ui'));
+app.all('*', function (req, res) {
+        res.status(200).sendFile(`/`, {root: angularFolder});
+});
 
 // error handling
 app.use(function(err, req, res, next){

@@ -1,0 +1,12 @@
+<div class="mat-app-background basic-container">
+  <mat-toolbar>
+    <span>{{title}}</span>
+
+    <span class="spacer"></span>
+    <a matLine routerLink="" *ngIf="!isUser">Inicio</a>
+    <a matLine routerLink="objetivos" *ngIf="isUser">Mis Objetivos</a>
+    <a matLine href="/" *ngIf="isUser" (click)="logout()">Logout</a>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+</div>

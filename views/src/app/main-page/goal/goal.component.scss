@@ -1,0 +1,12 @@
+a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+mat-progress-spinner {
+    margin: auto;
+}

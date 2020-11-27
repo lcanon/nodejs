@@ -1,0 +1,19 @@
+<!--form [formGroup]="checkoutForm" (ngSubmit)="register(checkoutForm.value)"-->
+    <mat-form-field>
+        <mat-label>Nombre de usuario</mat-label>
+        <input matInput type="text" [(ngModel)]="username"/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Clave</mat-label>
+        <input matInput type="password" [(ngModel)]="password" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Re-clave</mat-label>
+        <input matInput type="password" [(ngModel)]="repassword" />
+    </mat-form-field>
+    <div>
+        <button mat-flat-button color="primary" type="submit" (click)="register(username, password, repassword)">Guardar</button>
+    </div>
+<!--/form-->

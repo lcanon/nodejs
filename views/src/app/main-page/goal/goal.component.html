@@ -1,0 +1,17 @@
+<div>
+    <!--figure id="pie"></figure -->
+
+    <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value"></mat-progress-spinner>
+
+    <!--div>
+        <button mat-mini-fab aria-label="Example icon button with a plus one icon">
+            <mat-icon>account_balance_wallet</mat-icon>
+        </button>
+    </div-->
+    <div>{{goal.actual}}€</div>
+    <a [routerLink]="['/goals', goal.id]" routerLinkActive="active">{{goal ? goal.name : ''}}</a>
+</div>

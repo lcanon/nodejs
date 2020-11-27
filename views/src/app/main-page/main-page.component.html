@@ -1,0 +1,23 @@
+<mat-card *ngIf="advice">
+    <mat-card-header>
+        <mat-card-title>{{advice.advice}}</mat-card-title>
+        <mat-card-subtitle>{{advice.concept}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            {{advice.description}}
+        </p>
+
+        <a target="_blank" [href]="advice.url">Conoce mas...</a>
+    </mat-card-content>
+</mat-card>
+
+<div class="container-button">
+    <button mat-flat-button color="primary" (click)="showNewGoal()">Nuevo Objetivo</button>
+</div>
+
+<div class="goals">
+    <div *ngFor="let goal of goals">
+        <app-goal [goal]="goal"></app-goal>
+    </div>
+</div>

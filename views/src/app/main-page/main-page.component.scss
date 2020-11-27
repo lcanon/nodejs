@@ -1,0 +1,24 @@
+.container-button {
+    align-content: center;
+    padding: 2em;
+    text-align: center;
+}
+
+.goals {
+    display: flex;
+    flex-direction: row;
+
+    >div {
+        width: 21em;
+        text-align: center;
+    }
+}
+
+a {
+    color: #0af;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

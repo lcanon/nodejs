@@ -1,0 +1,16 @@
+<div *ngIf="goal">
+    <div class="header">
+        <div class="miniature">
+            <img [src]="goal.urlImage" />
+            <h3>{{goal ? goal.name : ''}}</h3>
+        </div>
+        <div class="tips">
+            <span>{{goal.total - goal.actual}}€</span>
+            <span>para llegar a tu objetivo</span>
+        </div>
+    </div>
+
+    <div class="container-button"> 
+        <button mat-flat-button color="primary" (click)="showSaveMoney()" [disabled]="!canAdd()">Añadir dinero</button>
+    </div>
+</div>

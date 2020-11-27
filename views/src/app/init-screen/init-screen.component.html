@@ -1,0 +1,12 @@
+<div>
+    <img src="assets/imagen1.jpg" />
+</div>
+
+<mat-tab-group [(selectedIndex)]="selectedIndex">
+    <mat-tab label="Registro" color="primary"> 
+        <app-register (changeToLogin)="selectLogin()"></app-register>
+    </mat-tab>
+    <mat-tab label="Login">
+        <app-login></app-login>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Nuevo Objetivo</h2>
+<mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" [(ngModel)]="name" />
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Precio</mat-label>
+    <input matInput type="number" [(ngModel)]="price" />
+</mat-form-field>
+
+<div>
+    <button mat-flat-button color="primary" (click)="newGoal()">Guardar</button>
+    <button (click)="close()" mat-flat-button color="secondary">Cancelar</button>
+</div>

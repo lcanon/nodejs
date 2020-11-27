@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    padding: 2em;
+
+    >div {
+        flex: 1;
+    }
+}
+img {
+    max-width: 500px;
+    width: 100%;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+
+    .tips {
+        margin: 1em auto;
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+
+        >:first-child {
+            font-size: 5em;
+        }
+        >:last-child{
+            color: #888;
+        }
+    }
+}
+
+.miniature {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        text-align: center;
+    }
+}
